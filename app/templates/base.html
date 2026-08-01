@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+        SentinelIoT
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="/static/css/globals.css">
+
+    <link rel="stylesheet" href="/static/css/layout.css">
+
+    {% block head %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    {% include "components/sidebar.html" %}
+
+    <div class="main">
+
+        {% include "components/navbar.html" %}
+
+        <div class="content">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<link rel="stylesheet" href="/static/css/components.css">

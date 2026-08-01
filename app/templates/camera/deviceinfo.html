@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>{{ camera.model }}</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial;
+
+            background:#f4f4f4;
+
+            padding:40px;
+
+        }
+
+        .card{
+
+            width:600px;
+
+            margin:auto;
+
+            background:white;
+
+            padding:30px;
+
+            border-radius:10px;
+
+            box-shadow:0 0 15px rgba(0,0,0,.2);
+
+        }
+
+        table{
+
+            width:100%;
+
+            border-collapse:collapse;
+
+        }
+
+        td{
+
+            padding:12px;
+
+            border-bottom:1px solid #ddd;
+
+        }
+
+        td:first-child{
+
+            font-weight:bold;
+
+            width:220px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>{{ camera.model }}</h1>
+
+<h3>{{ camera.manufacturer }}</h3>
+
+<table>
+
+<tr>
+<td>Firmware</td>
+<td>{{ camera.firmware }}</td>
+</tr>
+
+<tr>
+<td>Serial Number</td>
+<td>{{ camera.serial_number }}</td>
+</tr>
+
+<tr>
+<td>MAC Address</td>
+<td>{{ camera.mac_address }}</td>
+</tr>
+
+<tr>
+<td>IP Address</td>
+<td>{{ camera.ip_address }}</td>
+</tr>
+
+<tr>
+<td>Resolution</td>
+<td>{{ camera.resolution }}</td>
+</tr>
+
+<tr>
+<td>Uptime</td>
+<td>{{ camera.uptime }}</td>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
+{% extends "base.html" %}
+
+{% block title %}
+Camera Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ camera.model }}</h1>
+
+<br>
+
+<div class="card">
+
+    <h2>System Status</h2>
+
+    <br>
+
+    <p>CPU : {{ status.cpu }}%</p>
+
+    <p>Memory : {{ status.memory }}%</p>
+
+    <p>Temperature : {{ status.temperature }}°C</p>
+
+</div>
+
+{% endblock %}

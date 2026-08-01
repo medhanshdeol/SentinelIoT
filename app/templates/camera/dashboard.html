@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+Camera Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <h1>{{ camera.model }}</h1>
+
+    <p>
+        Sentinel Technologies • Firmware {{ camera.firmware }}
+    </p>
+
+</div>
+
+<div class="card-grid">
+
+    {% with
+    title="CPU Usage",
+    value=status.cpu ~ "%",
+    subtitle="Current Device Load"
+    %}
+    {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with
+    title="Memory Usage",
+    value=status.memory ~ "%",
+    subtitle="RAM Utilization"
+    %}
+    {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with
+    title="Temperature",
+    value=status.temperature ~ "°C",
+    subtitle="Internal Sensor"
+    %}
+    {% include "components/stat_card.html" %}
+    {% endwith %}
+
+    {% with
+    title="Resolution",
+    value=camera.resolution,
+    subtitle="Video Stream"
+    %}
+    {% include "components/stat_card.html" %}
+    {% endwith %}
+
+</div>
+
+<br><br>
+
+<div class="card-grid">
+
+    <div class="stat-card">
+
+        <h2 class="card-title">
+            Device Information
+        </h2>
+
+        <table style="
+width:100%;
+line-height:2;
+color:white;
+border-collapse:collapse;
+">
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>Manufacturer</strong></td>
+                <td>{{ camera.manufacturer }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>Model</strong></td>
+                <td>{{ camera.model }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>Firmware</strong></td>
+                <td>{{ camera.firmware }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>Serial Number</strong></td>
+                <td>{{ camera.serial_number }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>MAC Address</strong></td>
+                <td>{{ camera.mac_address }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>IP Address</strong></td>
+                <td>{{ camera.ip_address }}</td>
+            </tr>
+
+            <tr>
+                <tr style="border-bottom:1px solid #2A2A2A;"></tr>
+                <td><strong>Uptime</strong></td>
+                <td>{{ camera.uptime }}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2 class="card-title">
+
+            Live Camera Feed
+
+        </h2>
+
+        <img
+            src="/static/images/camera/feed.png"
+            alt="Camera Feed"
+            style="
+                width:100%;
+                border-radius:12px;
+                margin-top:15px;
+            "
+        >
+
+    </div>
+
+</div>
+
+{% endblock %}
