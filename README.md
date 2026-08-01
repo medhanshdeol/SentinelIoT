@@ -4,14 +4,14 @@ An AI-Enhanced Adaptive IoT Honeypot built using FastAPI.
 
 Features
 
-Simulated IoT Camera
-Security Dashboard
-Credential Capture
-Request Logging
-Modern UI
-AI-ready Architecture
-SQLite Integration 
-Threat Analytics 
+- Simulated IoT Camera
+- Security Dashboard
+- Credential Capture
+- Request Logging
+- Modern UI
+- AI-ready Architecture
+- SQLite Integration 
+- Threat Analytics 
 
 Tech Stack
 
@@ -22,32 +22,8 @@ Tech Stack
 - JavaScript
 - SQLite 
 
-Project Structure
 
-SentinelIoT
-│
-├── app/
-├── data/
-├── docs/
-├── research/
-├── scripts/
-├── tests/
-├── logs/
-├── requirements.txt
-└── README.md
-```
-Roadmap
-
-- [x] Project Initialization
-- [x] Camera Module
-- [x] Dashboard UI
-- [x] Device Information
-- [ ] SQLite Integration
-- [ ] Attack Logs
-- [ ] Analytics
-- [ ] AI Detection
-- [ ] Adaptive Deception
-
----
 
 Built as a Cybersecurity & IoT Research Project.
+
+<img width="1874" height="902" alt="Screenshot 2026-08-02 015001" src="https://github.com/user-attachments/assets/996a5988-4034-44e1-97f8-5e7126e1f23f" />
