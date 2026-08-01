@@ -12,14 +12,12 @@ app = FastAPI(
     version="0.1.0"
 )
 
-# Static files
 app.mount(
     "/static",
     StaticFiles(directory="app/static"),
     name="static"
 )
 
-# Routers
 app.include_router(camera_router)
 
 
